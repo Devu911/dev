@@ -1,0 +1,65 @@
+import React from 'react';
+import { PenLine, Globe, Mail, Search, MessageSquare, FileText } from 'lucide-react';
+
+const services = [
+  {
+    icon: <PenLine className="w-6 h-6" />,
+    title: "Blog Writing",
+    description: "In-depth, well-researched articles that establish authority and drive organic traffic to your site."
+  },
+  {
+    icon: <Globe className="w-6 h-6" />,
+    title: "Website Copy",
+    description: "Landing pages, about us sections, and service descriptions optimized for conversion."
+  },
+  {
+    icon: <Search className="w-6 h-6" />,
+    title: "SEO Strategy",
+    description: "Keyword research and content planning to ensure your voice reaches the right audience."
+  },
+  {
+    icon: <Mail className="w-6 h-6" />,
+    title: "Email Marketing",
+    description: "Nurture sequences and newsletters that keep your subscribers engaged and buying."
+  },
+  {
+    icon: <MessageSquare className="w-6 h-6" />,
+    title: "Social Media",
+    description: "Snackable content and captions designed to stop the scroll and spark conversation."
+  },
+  {
+    icon: <FileText className="w-6 h-6" />,
+    title: "White Papers",
+    description: "Technical and B2B content that simplifies complex topics for decision makers."
+  }
+];
+
+export const Services: React.FC = () => {
+  return (
+    <section id="services" className="py-20 bg-slate-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-brand-600 font-semibold tracking-wide uppercase text-sm mb-2">Our Expertise</h2>
+          <h3 className="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">Comprehensive Content Solutions</h3>
+          <p className="text-lg text-slate-600">
+            We don't just write words; we craft narratives that align with your business goals and resonate with your customers.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <div key={index} className="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow group">
+              <div className="w-12 h-12 bg-brand-50 rounded-lg flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                {service.icon}
+              </div>
+              <h4 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h4>
+              <p className="text-slate-600 leading-relaxed">
+                {service.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
